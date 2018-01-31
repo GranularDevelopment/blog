@@ -4,7 +4,6 @@ import { Container } from 'react-responsive-grid'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Sidebar from '../components/Sidebar'
 import Media from 'react-media'
 
 import { rhythm, scale } from '../utils/typography'
