@@ -1,7 +1,5 @@
 import React from 'react'
 
-import 'typeface-Vollkorn'
-
 import profilePic from '../img/profile.png'
 import { rhythm } from '../utils/typography'
 
