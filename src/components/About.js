@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import { Page, Row, Column } from 'hedron'
 
-import ColorBar from '../components/colorbar'
+import ColorBar from '../components/ColorBar'
 
 export default class About extends React.Component {
   render() {
