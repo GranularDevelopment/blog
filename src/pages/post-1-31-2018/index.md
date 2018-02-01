@@ -51,17 +51,18 @@ Let’s take a look at real production code, taken from a Xamarin App ( class na
 
 ### What’s the solution?
 
-I find the best the solution is to work directly with the coworker who checked in this is code change. Software development is all about, well, development. By working as team, or pair programming with another coworker, you build a stronger relationship with that person and you are able to walk them through your way of thinking.
+I find the best the solution is to work directly with the coworker who checked in this code change. 
+Software development is all about, well, development. By working as a team, or pair programming with another coworker, you build a stronger relationship with that person and you are able to walk them through your way of thinking.
 
 ### Let’s go through this:
 
-The LoginView is a view that allows the user to login through a web view or through OAuth. When selecting web view login, a new page will appear on top of the LoginView allowing the user to login. Once the user logs in we call the HandleLogin() method popping the web view page.
+The LoginView is a view that allows the user to login through a web view or through OAuth. In our case we are using the web view. When selecting web view login, a new page will appear on top of the LoginView allowing the user to login. Once the user logs in we call the HandleLogin() method popping the web view page.
 
 The issue we have is that each type of login page uses the HandleLogin function to pop off its page.  The web view is using HandleLogin as a callback and delegating the PopAsync() to the LoginView. This makes the code highly coupled and the web view is dependent on the LoginView. The solution is to have the web view handle PopAsync() itself. 
 
 
 
-```cs 
+```csharp 
      public class WebViewPage : Page
     {
         private int flow;
@@ -85,4 +86,4 @@ The issue we have is that each type of login page uses the HandleLogin function 
     }
 ```
 
-There's a lot more to clean code than than what I have written here. The point is to make the code as easy to understand for your reader and try to remove as much ambiguity as you can. 
+There's a lot more to clean code than what has been shown here. The point is to make the code as easy to understand for your reader and try to remove as much ambiguity as you can. 
