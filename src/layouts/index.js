@@ -18,16 +18,19 @@ class Template extends React.Component {
     }
 
     return (
-      <Container
+      <Container>
+        <Hero/>
+        <Container
         style={{
           maxWidth: rhythm(34),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          padding: `${rhythm(2.9)} ${rhythm(3/5)}`,
+
         }}
       >
-      <Hero/>
-   {children()}
-
+          {children()}
+        </Container>
       </Container>
+      
     )
   }
 }
