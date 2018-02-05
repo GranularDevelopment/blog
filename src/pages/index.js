@@ -17,7 +17,12 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <Helmet title={siteTitle} />
+        <Helmet> 
+        title={siteTitle} 
+        <meta name="msvalidate.01" content="0457555622B43F84DDB5672584E5F8BE" />
+        <meta name="descrition" content="Another software development blog" />
+        <meta name="keywords" content="software, blog, developer, ubuntu, nginx, linux, iOS, android, C#, python, sql, xamarin, software developer, software engineer, flask"/>
+        </Helmet>
         <About/>
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
