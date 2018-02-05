@@ -3,6 +3,7 @@ module.exports = {
     title: 'Granular Development Blog',
     author: 'Brian Smith',
     description: ' Developer Blog',
+    keywords:'software, blog, developer, ubuntu, nginx, linux, iOS, android, C#, python, sql, xamarin, software developer, software engineer, flask',
     siteUrl: 'https://blog.granulardevelopment.com',
   },
   pathPrefix: '/granular-blog',
