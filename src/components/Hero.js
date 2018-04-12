@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 import GitImage from '../img/Octocat.png'
 import LinkedInImage from '../img/linkedin.png'
+import XamarinImage from '../img/xamarin.png'
+import XamarinPDF from '../img/Brian_Smith_Professional.pdf'
 import GmailImage from '../img/Gmail.png'
 
 const HeroSection = styled.div`height: 10vh;`
@@ -125,6 +127,17 @@ const LinkedInImageWrapper = styled.div`
   height: 40px;
   width:40px
 `
+
+const XamarinImageWrapper = styled.div`
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  background-image: url(${XamarinImage});
+  background-size: cover;
+  background-position: 20% 22%;
+  height: 40px;
+  width:40px
+`
+
 const GmailImageWrapper = styled.div`
   border: none;
   border-bottom: 1px solid #e0e0e0;
@@ -155,15 +168,23 @@ export default class Hero extends React.Component {
             <Role>Software Engineer</Role>
           </LogoWrapper>
           <SocialIconWrapper>
+
             <SocialLink href="https://github.com/brian-smith723">
             <GitImageWrapper/>
             </SocialLink>
+
             <SocialLink href="https://linkedin.com/in/brian-smith-811097a0">
             <LinkedInImageWrapper/>
             </SocialLink>
+
+            <SocialLink href={XamarinPDF} download>
+              <XamarinImageWrapper/>
+            </SocialLink>
+
             <SocialLink href="mailto:briansmith4479@gmail.com">
              <GmailImageWrapper/>
             </SocialLink>
+            
           </SocialIconWrapper>
         </FrontPageHeader>
        </HeroSection>

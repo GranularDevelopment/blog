@@ -29,7 +29,7 @@ export default class About extends React.Component {
           <h2>Passions</h2>
           <ColorBar color="#FFA6A6"/>
           <p>
-             When I'm not studying or coding, I enjoy hiking with my trusty Shiba Inu, reading Haruki Murakami novels and practicing Castellano. 
+             When I'm not studying or coding, I enjoy hiking with my trusty Shiba Inus, reading Haruki Murakami novels and practicing Castellano. 
           </p>
         </Column>
       </Row>
