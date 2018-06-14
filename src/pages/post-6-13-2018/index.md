@@ -1,6 +1,6 @@
 ---
 title: Building a Java Application for Mac 
-date: "2018-06-13T4:12:03.284Z"
+date: "2018-06-13T04:12:03.284Z"
 ---
 
 In this article, we look at deploying your Java application on Mac. Unfortunately, there is not a lot of information on how to bring your Java application to the Mac. Let's get started.
