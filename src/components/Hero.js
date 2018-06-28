@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import GitImage from '../img/Octocat.png'
 import LinkedInImage from '../img/linkedin.png'
 import XamarinImage from '../img/xamarin.png'
-import XamarinPDF from '../img/Brian_Smith_Professional.pdf'
+import XamarinPDF from '../img/Brian_Smith_Developer.pdf'
 import GmailImage from '../img/Gmail.png'
 
 const HeroSection = styled.div`height: 10vh;`
