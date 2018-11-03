@@ -7,6 +7,7 @@ import About from '../components/About'
 import Media from 'react-media'
 
 import { rhythm, scale } from '../utils/typography'
+require("prismjs/themes/prism-solarizedlight.css");
 
 class Template extends React.Component {
   render() {
