@@ -1,9 +1,9 @@
 ---
-title: Xamarin Forms Keyboard Enter Command 
-date: "2019-04-04T04:12:03.284Z"
+title: Deeplinking iOS and Android, Nginx and .Well-Known 
+date: "2019-04-07T04:12:03.284Z"
 ---
 
-### Deeplinking iOS and Android, Nginx and .Well-Known?
+### Deeplinking iOS and Android, Nginx and .Well-Known.
 
 In this tutorial we will setup the server side of deeplinking for iOS and Android using Nginx.
 
