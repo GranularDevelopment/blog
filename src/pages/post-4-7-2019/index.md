@@ -66,4 +66,4 @@ and
 https://developers.google.com/digital-asset-links/tools/generator
 
 
-## Thats it! Now your apple-app-site-association and assetlinks.json file should accessible.
+## Thats it! Now your apple-app-site-association and assetlinks.json file should be accessible.
