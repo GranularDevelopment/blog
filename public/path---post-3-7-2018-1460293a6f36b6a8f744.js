@@ -1,0 +1,2 @@
+webpackJsonp([0x602787620eeb],{509:function(t,e){t.exports={pathContext:{slug:"/post-3-7-2018/",previous:{fields:{slug:"/post-2-26-2018/"},frontmatter:{title:"C# Async Guidelines"}},next:{fields:{slug:"/post-4-23-2018/"},frontmatter:{title:"Clean Architecture"}}}}}});
+//# sourceMappingURL=path---post-3-7-2018-1460293a6f36b6a8f744.js.map

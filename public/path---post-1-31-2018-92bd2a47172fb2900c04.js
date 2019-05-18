@@ -1,0 +1,2 @@
+webpackJsonp([0xc47ef63a6c93],{504:function(t,e){t.exports={pathContext:{slug:"/post-1-31-2018/",previous:!1,next:{fields:{slug:"/post-2-5-2018/"},frontmatter:{title:"Creating a Subdomain"}}}}}});
+//# sourceMappingURL=path---post-1-31-2018-92bd2a47172fb2900c04.js.map

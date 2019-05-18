@@ -1,0 +1,2 @@
+webpackJsonp([0x6df255837124],{511:function(t,e){t.exports={pathContext:{slug:"/post-4-26-2018/",previous:{fields:{slug:"/post-4-23-2018/"},frontmatter:{title:"Clean Architecture"}},next:{fields:{slug:"/post-6-13-2018/"},frontmatter:{title:"Building a Java Application for Mac"}}}}}});
+//# sourceMappingURL=path---post-4-26-2018-0d57d0f9cfe81424b97b.js.map

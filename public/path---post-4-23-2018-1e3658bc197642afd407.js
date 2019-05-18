@@ -1,0 +1,2 @@
+webpackJsonp([70797574113150],{510:function(t,a){t.exports={pathContext:{slug:"/post-4-23-2018/",previous:{fields:{slug:"/post-3-7-2018/"},frontmatter:{title:"Xamarin Events into Commands"}},next:{fields:{slug:"/post-4-26-2018/"},frontmatter:{title:"Package a Java Application for Mac"}}}}}});
+//# sourceMappingURL=path---post-4-23-2018-1e3658bc197642afd407.js.map

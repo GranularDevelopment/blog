@@ -1,0 +1,2 @@
+webpackJsonp([0xb7c4564b7302],{508:function(t,e){t.exports={pathContext:{slug:"/post-2-5-2018/",previous:{fields:{slug:"/post-1-31-2018/"},frontmatter:{title:"The Importance of Clean Code"}},next:{fields:{slug:"/post-2-11-2018/"},frontmatter:{title:"Perceptron in Python"}}}}}});
+//# sourceMappingURL=path---post-2-5-2018-7873338865295866adbb.js.map
