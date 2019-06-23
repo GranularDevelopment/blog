@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Granular Development Blog]]></title><description><![CDATA[ Developer Blog]]></description><link>https://blog.granulardevelopment.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 20 May 2019 17:51:08 GMT</lastBuildDate><item><title><![CDATA[Configuring Spring Boot Application Properties]]></title><description><![CDATA[Configuring Spring Boot Application Properties. Application properties can be found in resources folder under the main folder. Spring Boot…]]></description><link>https://blog.granulardevelopment.com/post-4-24-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-4-24-2019/</guid><pubDate>Wed, 24 Apr 2019 22:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;Configuring Spring Boot Application Properties.&lt;/h3&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Granular Development Blog]]></title><description><![CDATA[ Developer Blog]]></description><link>https://blog.granulardevelopment.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 23 Jun 2019 21:51:34 GMT</lastBuildDate><item><title><![CDATA[Jenkins Build Pull Request]]></title><description><![CDATA[Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests. Source Code Management. Under Advanced set “refspec” to…]]></description><link>https://blog.granulardevelopment.com/post-6-23-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-6-23-2019/</guid><pubDate>Sun, 23 Jun 2019 04:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests.&lt;/p&gt;
+&lt;h3&gt;Source Code Management.&lt;/h3&gt;
+&lt;p&gt;Under Advanced set “refspec” to :&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;+refs/pull/*:refs/remotes/origin/pr/*&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;In “Branch Specifier”, enter: &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;${ghprbActualCommit}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-18757.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 58.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsSAAALEgHS3X78AAABS0lEQVQoz62SyW7CQBBE+f9PCYeAwBdO5hsMcSCeidcZL3gBLGxOlelGSAHhJEg5PFlue2qqunu0bxp4noDv+5BCYr1ew31zsd1u0fc9zufzU4xOpxN2ux26rnv68EPBdt+gNoLk5j8YHY9HKKUQhSEaE5/I8xxaa66T+7IkKjiOA9u2b6Dvh8MBQaQRqvwi+J26rpGlKYQQCM0lzmqFyeQVk+kU9nKJ8fgFs/kclmUxRVHwudw8SfihIDkkx1qn2Gw2WCwWjB8EkJ8+i5CzewYFUxM3iiITs+TaX3onAzUsSP0TZpVIkKB3cpVlKV9GNRKhzbgyKEhDuQyi/BXheby31JabyDTNJE4MMQvSz1VV3UC16xbck8zG0FnxU2QF3zTf+/AgpURghhGGEWLT1yRJGLqgbVsWIWKVDUe+dzcExXTdd16xsipZ8AtECYXu9RvfhQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Alternate screenshot&quot;
+        title=&quot;&quot;
+        src=&quot;/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-fb8a0.png&quot;
+        srcset=&quot;/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-1a291.png 148w,
+/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-2bc4a.png 295w,
+/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-fb8a0.png 590w,
+/static/jenkins_sourceCodeManagement-be03245e255ca280d71bef9c905a3332-18757.png 880w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;h3&gt;Build Triggers&lt;/h3&gt;
+&lt;p&gt;Select GitHub Pull Request Builder.
+In GitHub API credentials add &lt;code class=&quot;language-text&quot;&gt;https://api.github.com: Anonymous connection&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In the Admin list add your username and select github hooks for building triggering.&lt;/p&gt;
+&lt;p&gt;
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-18757.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 42.5%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAAwUlEQVQoz6WRWwqDMBBFs8a6DxdcfxI0aYyJr1SjH3KbEYVSSKE2cJmBmZx5McE5inuBYRyxruvfYnVdo2kaGGPgnIu+xXgRbtwAxrmAEAKawNbC++fl7ri0YFVVQUoFrTVc2/41bggLmJQSSimQ9d7v49rYaX103MYiZGktFF+WJamu6yIwwsih5BOYZTfkeY5t237SNE1gJ+gdePUlgSGEhGbM85yM09/jKLTHB8qy3I/TaYnPQt/U9/2+NqkbvAC0qLRmCm2xkgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;Alternate screenshot&quot;
+        title=&quot;&quot;
+        src=&quot;/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-fb8a0.png&quot;
+        srcset=&quot;/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-1a291.png 148w,
+/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-2bc4a.png 295w,
+/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-fb8a0.png 590w,
+/static/jenkins_buildTriggers-f78b4187741fbee1acd22e30686b816c-18757.png 880w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Configuring Spring Boot Application Properties]]></title><description><![CDATA[Configuring Spring Boot Application Properties. Application properties can be found in resources folder under the main folder. Spring Boot…]]></description><link>https://blog.granulardevelopment.com/post-4-24-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-4-24-2019/</guid><pubDate>Wed, 24 Apr 2019 22:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;Configuring Spring Boot Application Properties.&lt;/h3&gt;
 &lt;p&gt;Application properties can be found in resources folder under the main folder.&lt;/p&gt;
 &lt;p&gt;Spring Boot allows for 3 different application properties:&lt;/p&gt;
 &lt;ul&gt;
