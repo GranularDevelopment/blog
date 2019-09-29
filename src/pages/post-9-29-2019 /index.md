@@ -20,7 +20,7 @@ SQL tables
 In order to remove a parent from the parents table and all its child, requires you to solve violation on foreign key constraints. We can solve this by cascading.
 
 ### Solution
-   monitor_id = db.Column(db.Integer, db.ForeignKey('monitors.id'))
+ child = relationship(Child, cascade="all,delete", backref="parent")
 ```
 class Parent(db.Model):
     __tablename__ = 'parent'
