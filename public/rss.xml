@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Granular Development Blog]]></title><description><![CDATA[ Developer Blog]]></description><link>https://blog.granulardevelopment.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 23 Jun 2019 21:51:34 GMT</lastBuildDate><item><title><![CDATA[Jenkins Build Pull Request]]></title><description><![CDATA[Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests. Source Code Management. Under Advanced set “refspec” to…]]></description><link>https://blog.granulardevelopment.com/post-6-23-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-6-23-2019/</guid><pubDate>Sun, 23 Jun 2019 04:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Granular Development Blog]]></title><description><![CDATA[ Developer Blog]]></description><link>https://blog.granulardevelopment.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 29 Sep 2019 14:33:11 GMT</lastBuildDate><item><title><![CDATA[SQLAlchemy update or delete on table violates foreign key constraint]]></title><description><![CDATA[How to delete a specific parent from a table and all its children in another table. SQL tables In order to remove a parent from the parents…]]></description><link>https://blog.granulardevelopment.com/post-9-29-2019 /</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-9-29-2019 /</guid><pubDate>Sun, 29 Sep 2019 04:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;How to delete a specific parent from a table and all its children in another table.&lt;/h3&gt;
+&lt;p&gt;SQL tables&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;| Parent      |
+| ----------- |
+| id          |
+
+| Child                     |
+| ------------------------- |
+| id                        |
+| parent_id (foreign key)   |&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;In order to remove a parent from the parents table and all its child, requires you to solve violation on foreign key constraints. We can solve this by cascading.&lt;/p&gt;
+&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;p&gt;   monitor_id = db.Column(db.Integer, db.ForeignKey(‘monitors.id’))&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;class Parent(db.Model):
+    __tablename__ = &amp;#39;parent&amp;#39;
+    id = db.Column(db.Integer, primary_key=True)
+    child = relationship(Child, cascade=&amp;quot;all,delete&amp;quot;, backref=&amp;quot;parent&amp;quot;)
+
+class Child(db.Model):
+    __tablename__ = &amp;#39;child&amp;#39;
+    id = db.Column(db.Integer, primary_key=True)
+    parent_id = db.Column(db.Integer, db.ForeignKey(&amp;#39;parent.id&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;</content:encoded></item><item><title><![CDATA[Nginx Loadbalancing Passing Path Parameters]]></title><description><![CDATA[Load Balancer Setup: How to handle requests based on location. Goal: Setup a new API using a path parameter. For example, you want to add…]]></description><link>https://blog.granulardevelopment.com/post-8-22-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-8-22-2019/</guid><pubDate>Thu, 22 Aug 2019 04:12:03 GMT</pubDate><content:encoded>&lt;h3&gt;Load Balancer Setup: How to handle requests based on location.&lt;/h3&gt;
+&lt;p&gt;Goal: Setup a new API using a path parameter. For example, you want to add /api to your url path that will hit your new API. That is yourwebiste.com/api.&lt;/p&gt;
+&lt;p&gt;The first step is to add a location block in your Nginx configuration. Lets create the location api block.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    server {
+
+    listen 443 ssl;
+    listen [::]:443 ssl ;
+
+
+    location / {
+      proxy_read_timeout 300;
+      proxy_connect_timeout 300;
+      proxy_pass http://yourwebsite.com;
+    }
+
+    #New API location
+    location ^~ /api{
+      proxy_read_timeout 300;
+      proxy_connect_timeout 300;
+      proxy_pass http://api/;
+    }
+
+ }&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;The next step is to add the upstream block that will pass the request to your backend servers.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;#Upstream block
+upstream api {
+    server backendserver:8081;
+  }
+
+server {
+
+    listen 443 ssl;
+    listen [::]:443 ssl ;
+
+
+    location / {
+      proxy_read_timeout 300;
+      proxy_connect_timeout 300;
+      proxy_pass http://yourwebsite.com;
+    }
+
+    #New API location
+    location ^~ /api{
+      proxy_read_timeout 300;
+      proxy_connect_timeout 300;
+      proxy_pass http://api/;
+    }
+ }&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Backend Server Setup&lt;/h3&gt;
+&lt;p&gt;Now we need to configure the backendserver to listen to port 8081 to receive the requests.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot;&gt;
+      &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;server {
+    listen 8081;
+    server_name api;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/path/to/api;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;That’s it! Nginx makes it very easy to configure and handle path paramter requests.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Jenkins Build Pull Request]]></title><description><![CDATA[Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests. Source Code Management. Under Advanced set “refspec” to…]]></description><link>https://blog.granulardevelopment.com/post-6-23-2019/</link><guid isPermaLink="false">https://blog.granulardevelopment.com/post-6-23-2019/</guid><pubDate>Sun, 23 Jun 2019 04:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Continuous Integration with Jenkins and GitHub. Get Jenkins to build Pull Requests.&lt;/p&gt;
 &lt;h3&gt;Source Code Management.&lt;/h3&gt;
 &lt;p&gt;Under Advanced set “refspec” to :&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot;&gt;
